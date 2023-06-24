@@ -1,0 +1,14 @@
+!pip install pytesseract
+!apt install tesseract-ocr
+
+import pytesseract
+from PIL import Image
+
+# Defina o caminho para o executável do Tesseract OCR
+pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+# Carregue a imagem
+imagem = Image.open('/content/imagem.png')
+# Realize o OCR na imagem
+texto_extraido = pytesseract.image_to_string(imagem)
+ # Exiba o texto extraído
+print(texto_extraido)
